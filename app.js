@@ -57,4 +57,7 @@ function processDetails(){
             }
         })
     }
+    else if (xhr.readyState === 4 && xhr.status !== 200) {
+    alert("Sorry! The request cannot be fulfilled\nReason:" + xhr.statusText);
+  }
 }
