@@ -38,11 +38,18 @@ function load(url) {
 }
 function showDetails() {
   let countryDetails = document.getElementById("countrydetails");
-  countryDetails.innerHTML='<br><img src="loading-gif.gif" alt="" width="50">'
+  // countryDetails.innerHTML='<br><img src="loading-gif.gif" alt="" width="50">'
   setTimeout(()=>{
     let countryIndex = countriesList.selectedIndex;
     let country = countriesArr[countryIndex];
-    let myHtml = `<table border='2'><tr><th>Capital City</th><td>${country.capital}</td></tr><tr><th>Flag</th><td><img src='${country.flags.png}'></td></tr><tr><th>Currency Name</th><td>${country.currencies[0].name}</td></tr></table>`;
-    countryDetails.innerHTML = myHtml;
+    // let myHtml = `<table border='2'><tr><th>Capital City</th><td>${country.capital}</td></tr><tr><th>Flag</th><td><img src='${country.flags.png}'></td></tr><tr><th>Currency Name</th><td>${country.currencies[0].name}</td></tr></table>`;
+    // countryDetails.innerHTML = myHtml;
+    let capital=countryDetails.children[0].children[0].children[0].lastElementChild
+    let flag=countryDetails.children[0].children[0].children[1].lastElementChild.children[0]
+    let cur=countryDetails.children[0].children[0].children[2].lastElementChild
+    capital.innerHTML=country.capital
+    flag.src=country.flags.png
+    cur.innerHTML=country.currencies[0].name
+    countryDetails.children[0].classList.value='show';
   },500)
 }

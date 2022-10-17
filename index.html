@@ -5,10 +5,25 @@
     <link rel="stylesheet" type="text/css" href="styles.css"></link>
     <style>
       .show{
-        display: inline;
+        display: inline-block;
       }
       .hide{
         display: none;
+      }
+      th,td{
+        border: 1px solid rgb(147, 147, 147);
+        padding: 5px;
+      }
+      table{
+        border-collapse: collapse;
+      }
+      /* #countrydetails tr:nth-child(even)
+      {
+        background-color: #f2f2f2;
+      } */
+
+      #countrydetails tr:hover {
+        background-color: #ddd;
       }
     </style>
   </head>
@@ -18,7 +33,13 @@
        <input type="button" value="Load Countries" onclick="loadCountries()"><br><br>
        <div class="img"></div>
        <select id="countries" onchange="showDetails()" class="hide"></select>
-       <div id="countrydetails"></div>
+       <div id="countrydetails">
+        <table class="hide" >
+          <tr><th>Capital City</th><td></td></tr>
+          <tr><th>Flag</th><td style="padding: 0;"><img src="" alt="country-img"></td></tr>
+          <tr><th>Curunsies</th><td></td></tr>
+        </table>
+       </div>
     </div>
   </body>
 </html>
